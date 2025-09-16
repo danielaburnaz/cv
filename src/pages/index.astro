@@ -15,127 +15,162 @@ import ProjectView from "../components/ProjectView.jsx";
 	<body class="font-roboto text-neutral-900">
 		<main class="md:pl-25">
 			<section id="hero" class="relative h-screen w-full overflow-hidden">
-				<!-- the gif is causing the whole site to lag fix pls -->
 				<div class="absolute inset-0 -z-10 bg-cover bg-center" style="background-image: url('/img/fish.gif');"></div>
-				<div class="absolute inset-0 -z-10 bg-gradient-to-b from-black/30 via-transparent to-black/50"></div>
 				<div class="h-full w-full flex flex-col items-center justify-center text-center px-6">
 					<h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white mb-4">
-						<!-- <span class="bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-400 via-pink-500 to-rose-500">Daniela's Portfolio</span> -->
-						 Meow
+						 Daniela Burnaz
 					</h1>
-					<!-- there is an issue here that when the typewriter starts writing again it jumps because the div size changes. -->
 					<Typewriter client:load words={["Web Developer", "Designer", "Game Developer"]} />
 				</div>
 			</section>
 
-			<section id="about" class="h-screen w-full flex items-center">
+			<section id="about" class="min-h-screen w-full flex items-center py-12 bg-gradient-to-br from-rose-500 to-fuchsia-600" >
 				<div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 px-6">
-					<div class="bg-pink-500 text-white rounded-2xl p-10 shadow-2xl">
+					<div class="bg-pink-500 text-white rounded-2xl p-10 shadow-2xl flex flex-col">
 						<h2 class="text-4xl md:text-5xl font-extrabold mb-5">Hi! I'm Daniela</h2>
-						<p class="mb-3 text-lg md:text-xl opacity-95">I'm a Web Developer and Designer who loves to make pretty websites.</p>
-						<p class="text-lg md:text-xl opacity-95">I have a keen eye for design and code.</p>
+						<p class="mb-3 text-lg md:text-xl opacity-95">
+						  I'm a web developer, designer, and space enthusiast who mixes code with creativity.
+						</p>
+						<p class="mb-3 text-lg md:text-xl opacity-95">
+						  I've built sleek websites, mentored budding designers, interned in robotics,
+						  and helped in satellite projects.
+						</p>
+						<p class="mb-3 text-lg md:text-xl opacity-95">
+						  Whether it's crafting intuitive interfaces, experimenting with game design, or crafting
+						  award-winning MVPs at hackathons with my teammates, I love turning ideas into things people can see, click, and enjoy.
+						</p>
+						<p class="text-lg md:text-xl opacity-95 italic">
+						  P.S. I like giving hugs 🤗
+						</p>
 					</div>
-					<div class="rounded-2xl bg-cover bg-center shadow-2xl min-h-[50vh] md:min-h-[70vh]" style="background-image: url('/img/hug.png');"></div>
-				</div>
-			</section>
-
-			<section id="skills" class="h-screen w-full flex items-center bg-gradient-to-br from-fuchsia-50 via-white to-rose-50">
-				<div class="container mx-auto px-6">
-					<h2 class="text-4xl md:text-5xl font-extrabold mb-8">Skills</h2>
-					<div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6">
-						{Array.from({ length: 12 }).map((_, i) => (
-							<div class="h-20 rounded-xl bg-gradient-to-br from-fuchsia-500 to-rose-500 text-white flex items-center justify-center text-sm md:text-base font-semibold shadow-lg">Logo {i + 1}</div>
-						))}
-					</div>
-				</div>
-			</section>
-
-			<section id="projects" class="relative h-screen w-full overflow-hidden">
-				<!-- Background Spline Scene -->
-				<ProjectView client:load />
-			  
-				<div class="absolute inset-0 overflow-y-auto p-8">
-				  <h2 class="text-4xl md:text-5xl font-extrabold mb-6 text-neutral-900 text-center">
-					Projects
-				  </h2>
-			  
-				  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-					<div class="bg-white/80 rounded-2xl shadow-lg p-6">
-					  <div style="background-image: url('/img/hug.png');"></div>
-					  <h3 class="text-xl font-bold mb-2">Project 1</h3>
-					  <p class="text-neutral-600">Short description of project 1.</p>
-					</div>
-			  
-					<div class="bg-white/80 rounded-2xl shadow-lg p-6">
-					  <h3 class="text-xl font-bold mb-2">Project 2</h3>
-					  <p class="text-neutral-600">Short description of project 2.</p>
-					</div>
-			  
-					<div class="bg-white/80 rounded-2xl shadow-lg p-6">
-					  <h3 class="text-xl font-bold mb-2">Project 3</h3>
-					  <p class="text-neutral-600">Short description of project 3.</p>
-					</div>
-
-					<div class="bg-white/80 rounded-2xl shadow-lg p-6">
-						<h3 class="text-xl font-bold mb-2">Project 3</h3>
-						<p class="text-neutral-600">Short description of project 3.</p>
-					</div>
-
-					<div class="bg-white/80 rounded-2xl shadow-lg p-6">
-						<h3 class="text-xl font-bold mb-2">Project 3</h3>
-						<p class="text-neutral-600">Short description of project 3.</p>
-					</div>
-			  
-					<div class="bg-white/80 rounded-2xl shadow-lg p-6">
-						<h3 class="text-xl font-bold mb-2">Project 3</h3>
-						<p class="text-neutral-600">Short description of project 3.</p>
-					</div>
-
-					<div class="bg-white/80 rounded-2xl shadow-lg p-6">
-						<h3 class="text-xl font-bold mb-2">Project 3</h3>
-						<p class="text-neutral-600">Short description of project 3.</p>
-					</div>
-
-					<div class="bg-white/80 rounded-2xl shadow-lg p-6">
-						<h3 class="text-xl font-bold mb-2">Project 3</h3>
-						<p class="text-neutral-600">Short description of project 3.</p>
-					</div>
+					  
+				  <div
+					class="rounded-2xl bg-cover bg-center shadow-2xl min-h-[40vh] md:min-h-[70vh]"
+					style="background-image: url('/img/hug.png');">
 				  </div>
 				</div>
 			  </section>
 			  
+			<section id="projects" class="relative h-screen w-full overflow-hidden">
+				<ProjectView client:load />
+				<div class="absolute bottom-0 right-0 w-40 h-20 bg-white"></div>
+				<div class="absolute inset-0 overflow-y-auto p-8">
+				  <h2 class="text-4xl md:text-5xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-400 via-pink-500 to-rose-500 text-center">
+					Projects
+				  </h2>
+				  
+				  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+					  
+					<a href="https://www.behance.net/gallery/234760079/Estonian-Student-Satellite" target="_blank" rel="noopener noreferrer"
+					class="group block bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden">
+						<div class="relative w-full h-48 lg:h-58 bg-cover bg-center" 
+								style="background-image: url('/img/tll.png');">
+						</div>
+						<div class="p-6">
+							<h3 class="text-xl font-bold mb-2">
+							Estonian Student Satellite
+							</h3>
+							<p class="text-neutral-600 text-sm md:text-base">
+							Worked on all consumer-facing designs: rollups, social-media posts, posters, and online appearance.
+							</p>
+						</div>
+					</a>
+
+					<a href="https://lewkis.itch.io/bob-bill" target="_blank" rel="noopener noreferrer"
+					class="group block bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden">
+						<div class="relative w-full h-48 lg:h-58 bg-cover bg-center" 
+								style="background-image: url('/img/park4.png');">
+						</div>
+						<div class="p-6">
+							<h3 class="text-xl font-bold mb-2">Babol</h3>
+							<p class="text-neutral-600 text-sm md:text-base">Shoot bubbles at mosquitoes and defeat their queen! I made the
+								art and pair programmed in Godot.</p>
+						</div>
+					</a>
+
+					<a href="https://ifctroll.vercel.app/" target="_blank" rel="noopener noreferrer"
+					class="group block bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden">
+						<div class="relative w-full h-48 lg:h-58 bg-cover bg-center" 
+								style="background-image: url('/img/ifctroll.png');">
+						</div>
+						<div class="p-6">
+							<h3 class="text-xl font-bold mb-2">IFC Troll</h3>
+							<p class="text-neutral-600">I designed the interface of IFCTroll in a way that even people
+							  with non-technical backgrounds could choose connectors for their construction projects</p>
+						</div>
+					</a>
+
+					<a href="https://github.com/danielaburnaz/sketchsphere-network" target="_blank" rel="noopener noreferrer"
+					class="group block bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden">
+						<div class="relative w-full h-48 lg:h-58 bg-cover bg-center" 
+								style="background-image: url('/img/sphere.png');">
+						</div>
+						<div class="p-6">
+							<h3 class="text-xl font-bold mb-2">SketchSphere network</h3>
+							<p class="text-neutral-600">Social network built with Go (backend) and with Next.JS (frontend). It features user authentication with sessions and cookies</p>
+						</div>
+					</a>
+
+					<a href="https://github.com/danielaburnaz/noodle-stop" target="_blank" rel="noopener noreferrer"
+					class="group block bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden">
+						<div class="relative w-full h-48 lg:h-58 bg-cover bg-center" 
+								style="background-image: url('/img/noodle.png');">
+						</div>
+						<div class="p-6">
+							<h3 class="text-xl font-bold mb-2">NoodleStop</h3>
+							<p class="text-neutral-600">Full-Stack Java Web E-Commerce Application.</p>
+						</div>
+					</a>
+
+					<a href="https://www.behance.net/gallery/194304049/Clipster" target="_blank" rel="noopener noreferrer"
+					class="group block bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden">
+						<div class="relative w-full h-48 lg:h-58 bg-cover bg-center" 
+								style="background-image: url('/img/clipster.png');">
+						</div>
+						<div class="p-6">
+							<h3 class="text-xl font-bold mb-2">Clipster</h3>
+							<p class="text-neutral-600">AI-generated flashcards app for studying based on pdf/text input</p>
+						</div>
+					</a>
+				  </div>
+				</div>
+			  </section>
 
 			<section id="cv" class="h-screen w-full flex items-center bg-neutral-900 text-white">
 				<div class="container mx-auto px-6">
-					<h2 class="text-center text-5xl md:text-7xl font-extrabold mb-4">Experiences</h2>
-					<p class="text-center text-neutral-300 mb-8">Past workplaces</p>
-					<ul class="divide-y divide-white/20 font-mono text-lg">
-						<li class="py-4">Award 1</li>
-						<li class="py-4">Award 2</li>
-						<li class="py-4">Award 3</li>
+					<h2 class="text-center text-5xl md:text-7xl font-extrabold mb-8">Work Experience</h2>
+					<ul class="divide-y divide-white/20 font-mono text-lg mt-6">
+						<li class="py-4">Estonian Student Satellite - Creative Team Lead</li>
+						<li class="py-4">Selkirk Sport - FlutterFlow App Developer</li>
+						<li class="py-4">Haus Galerii - Frontend Web Developer</li>
+						<li class="py-4">Stoc Digital Studio - Frontend Web Developer</li>
+						<li class="py-4">Digidisain Klubi - Photoshop Mentor</li>
 					</ul>
 				</div>
 			</section>
 
 			<section id="awards" class="h-screen w-full flex items-center bg-neutral-900 text-white">
 				<div class="container mx-auto px-6">
-					<h2 class="text-center text-5xl md:text-7xl font-extrabold mb-4">Awards</h2>
-					<p class="text-center text-neutral-300 mb-8">Selected recognitions</p>
-					<ul class="divide-y divide-white/20 font-mono text-lg">
-						<li class="py-4">Award 1</li>
-						<li class="py-4">Award 2</li>
-						<li class="py-4">Award 3</li>
-					</ul>
+				  <h2 class="text-center text-5xl md:text-7xl font-extrabold mb-8">
+					Awards
+				  </h2>
+				  <ul class="divide-y divide-white/20 font-mono text-lg mt-6">
+					<li class="py-4">1st place @ Junction - 2023</li>
+					<li class="py-4">2nd place @ Junction - 2024</li>
+					<li class="py-4">1st & 2nd place @ ETHPrague - 2024</li>
+					<li class="py-4">3rd place @ Global Game Jam - 2025</li>
+				  </ul>
 				</div>
-			</section>
+			</section>			  
 
 			<section id="contact" class="h-screen w-full flex items-center bg-gradient-to-br from-rose-500 to-fuchsia-600 text-white">
 				<div class="container mx-auto px-6">
-					<h2 class="text-center text-5xl md:text-7xl font-extrabold mb-4">Contact</h2>
-					<p class="text-center text-neutral-300 mb-8">Past workplaces</p>
-					<ul class=" divide-y divide-white/20 font-mono text-lg">
-						<li class="py-4"><a href="#">Github</a></li>
-						<li class="py-4"><a href="#">LinkedIn</a></li>
+					<h2 class="text-center text-5xl md:text-7xl font-extrabold mb-8">Contact</h2>
+					<ul class=" divide-y divide-white/20 font-mono text-lg mt-6">
+						<li class="py-4"><a href="https://github.com/danielaburnaz">Github</a></li>
+						<li class="py-4"><a href="https://www.linkedin.com/in/danielaburnaz/">LinkedIn</a></li>
+						<li class="py-4"><a href="https://www.behance.net/danielaburnaz">Behance</a></li>
 					</ul>
 				</div>
 			</section>

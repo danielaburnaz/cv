@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 interface TypewriterProps {
   words: string[];
@@ -13,43 +13,50 @@ export default function Typewriter({
   deletingSpeed = 60,
   pauseTime = 1000,
 }: TypewriterProps) {
-  const [text, setText] = useState("");
-  const [index, setIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const elRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
-    const currentWord = words[index % words.length];
+    let i = 0; // word index
+    let j = 0; // letter index
+    let isDeleting = false;
+    let timeout: NodeJS.Timeout;
 
-    if (!isDeleting && text === currentWord) {
-      timeoutRef.current = setTimeout(() => setIsDeleting(true), pauseTime);
-      return;
-    }
+    const type = () => {
+      const currentWord = words[i % words.length];
+      if (elRef.current) {
+        elRef.current.textContent = currentWord.slice(0, j);
+      }
 
-    if (isDeleting && text === "") {
-      setIsDeleting(false);
-      setIndex((i) => (i + 1) % words.length);
-    }
+      if (!isDeleting && j === currentWord.length) {
+        timeout = setTimeout(() => { isDeleting = true; type(); }, pauseTime);
+        return;
+      }
 
-    timeoutRef.current = setTimeout(() => {
-      setText((prev) =>
-        isDeleting
-          ? currentWord.slice(0, prev.length - 1)
-          : currentWord.slice(0, prev.length + 1)
-      );
-    }, isDeleting ? deletingSpeed : typingSpeed);
+      if (isDeleting && j === 0) {
+        isDeleting = false;
+        i++;
+      }
 
-    return () => {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+      j += isDeleting ? -1 : 1;
+      timeout = setTimeout(type, isDeleting ? deletingSpeed : typingSpeed);
     };
-  }, [text, isDeleting, index, words, typingSpeed, deletingSpeed, pauseTime]);
+
+    type();
+    return () => clearTimeout(timeout);
+  }, [words, typingSpeed, deletingSpeed, pauseTime]);
 
   return (
-    <span className="inline-flex items-center">
-      <span className="text-3xl md:text-5xl font-bold text-white">
-        {text}
+    <span className="inline-flex flex-col items-center">
+      <span className="invisible whitespace-nowrap text-3xl md:text-5xl font-bold">
+        {words.reduce((a, b) => (a.length >= b.length ? a : b), "")}
       </span>
-      <span className="w-0.5 h-8 md:h-10 bg-white animate-pulse" />
+      <span className="absolute inline-flex justify-center items-center w-full">
+        <span
+          ref={elRef}
+          className="text-3xl md:text-5xl font-bold text-white whitespace-nowrap text-center"
+        ></span>
+        <span className="w-0.5 h-8 md:h-10 bg-white animate-pulse ml-1" />
+      </span>
     </span>
   );
 }
