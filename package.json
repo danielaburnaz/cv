@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "@splinetool/react-spline": "^4.1.0",
+    "@splinetool/runtime": "^1.10.57",
+    "react": "^19.1.1"
+  },
+  "devDependencies": {
+    "@astrojs/react": "^3.6.3",
+    "@astrojs/tailwind": "^6.0.2",
+    "astro": "^4.16.19",
+    "typescript": "~5.6",
+    "vite": "^5.4.20"
+  },
+  "scripts": {
+    "dev": "astro dev --host",
+    "build": "astro build",
+    "preview": "astro preview"
+  }
+}

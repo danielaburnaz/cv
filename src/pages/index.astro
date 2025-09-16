@@ -1,0 +1,149 @@
+---
+import Typewriter from "../components/Typewriter.tsx";
+import "../styles/global.css";
+import ProjectView from "../components/ProjectView.jsx";
+---
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Dani</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+	</head>
+	<body class="font-roboto text-neutral-900">
+		<main class="md:pl-25">
+			<section id="hero" class="relative h-screen w-full overflow-hidden">
+				<!-- the gif is causing the whole site to lag fix pls -->
+				<div class="absolute inset-0 -z-10 bg-cover bg-center" style="background-image: url('/img/fish.gif');"></div>
+				<div class="absolute inset-0 -z-10 bg-gradient-to-b from-black/30 via-transparent to-black/50"></div>
+				<div class="h-full w-full flex flex-col items-center justify-center text-center px-6">
+					<h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white mb-4">
+						<!-- <span class="bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-400 via-pink-500 to-rose-500">Daniela's Portfolio</span> -->
+						 Meow
+					</h1>
+					<!-- there is an issue here that when the typewriter starts writing again it jumps because the div size changes. -->
+					<Typewriter client:load words={["Web Developer", "Designer", "Game Developer"]} />
+				</div>
+			</section>
+
+			<section id="about" class="h-screen w-full flex items-center">
+				<div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 px-6">
+					<div class="bg-pink-500 text-white rounded-2xl p-10 shadow-2xl">
+						<h2 class="text-4xl md:text-5xl font-extrabold mb-5">Hi! I'm Daniela</h2>
+						<p class="mb-3 text-lg md:text-xl opacity-95">I'm a Web Developer and Designer who loves to make pretty websites.</p>
+						<p class="text-lg md:text-xl opacity-95">I have a keen eye for design and code.</p>
+					</div>
+					<div class="rounded-2xl bg-cover bg-center shadow-2xl min-h-[50vh] md:min-h-[70vh]" style="background-image: url('/img/hug.png');"></div>
+				</div>
+			</section>
+
+			<section id="skills" class="h-screen w-full flex items-center bg-gradient-to-br from-fuchsia-50 via-white to-rose-50">
+				<div class="container mx-auto px-6">
+					<h2 class="text-4xl md:text-5xl font-extrabold mb-8">Skills</h2>
+					<div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6">
+						{Array.from({ length: 12 }).map((_, i) => (
+							<div class="h-20 rounded-xl bg-gradient-to-br from-fuchsia-500 to-rose-500 text-white flex items-center justify-center text-sm md:text-base font-semibold shadow-lg">Logo {i + 1}</div>
+						))}
+					</div>
+				</div>
+			</section>
+
+			<section id="projects" class="relative h-screen w-full overflow-hidden">
+				<!-- Background Spline Scene -->
+				<ProjectView client:load />
+			  
+				<div class="absolute inset-0 overflow-y-auto p-8">
+				  <h2 class="text-4xl md:text-5xl font-extrabold mb-6 text-neutral-900 text-center">
+					Projects
+				  </h2>
+			  
+				  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+					<div class="bg-white/80 rounded-2xl shadow-lg p-6">
+					  <div style="background-image: url('/img/hug.png');"></div>
+					  <h3 class="text-xl font-bold mb-2">Project 1</h3>
+					  <p class="text-neutral-600">Short description of project 1.</p>
+					</div>
+			  
+					<div class="bg-white/80 rounded-2xl shadow-lg p-6">
+					  <h3 class="text-xl font-bold mb-2">Project 2</h3>
+					  <p class="text-neutral-600">Short description of project 2.</p>
+					</div>
+			  
+					<div class="bg-white/80 rounded-2xl shadow-lg p-6">
+					  <h3 class="text-xl font-bold mb-2">Project 3</h3>
+					  <p class="text-neutral-600">Short description of project 3.</p>
+					</div>
+
+					<div class="bg-white/80 rounded-2xl shadow-lg p-6">
+						<h3 class="text-xl font-bold mb-2">Project 3</h3>
+						<p class="text-neutral-600">Short description of project 3.</p>
+					</div>
+
+					<div class="bg-white/80 rounded-2xl shadow-lg p-6">
+						<h3 class="text-xl font-bold mb-2">Project 3</h3>
+						<p class="text-neutral-600">Short description of project 3.</p>
+					</div>
+			  
+					<div class="bg-white/80 rounded-2xl shadow-lg p-6">
+						<h3 class="text-xl font-bold mb-2">Project 3</h3>
+						<p class="text-neutral-600">Short description of project 3.</p>
+					</div>
+
+					<div class="bg-white/80 rounded-2xl shadow-lg p-6">
+						<h3 class="text-xl font-bold mb-2">Project 3</h3>
+						<p class="text-neutral-600">Short description of project 3.</p>
+					</div>
+
+					<div class="bg-white/80 rounded-2xl shadow-lg p-6">
+						<h3 class="text-xl font-bold mb-2">Project 3</h3>
+						<p class="text-neutral-600">Short description of project 3.</p>
+					</div>
+				  </div>
+				</div>
+			  </section>
+			  
+
+			<section id="cv" class="h-screen w-full flex items-center bg-neutral-900 text-white">
+				<div class="container mx-auto px-6">
+					<h2 class="text-center text-5xl md:text-7xl font-extrabold mb-4">Experiences</h2>
+					<p class="text-center text-neutral-300 mb-8">Past workplaces</p>
+					<ul class="divide-y divide-white/20 font-mono text-lg">
+						<li class="py-4">Award 1</li>
+						<li class="py-4">Award 2</li>
+						<li class="py-4">Award 3</li>
+					</ul>
+				</div>
+			</section>
+
+			<section id="awards" class="h-screen w-full flex items-center bg-neutral-900 text-white">
+				<div class="container mx-auto px-6">
+					<h2 class="text-center text-5xl md:text-7xl font-extrabold mb-4">Awards</h2>
+					<p class="text-center text-neutral-300 mb-8">Selected recognitions</p>
+					<ul class="divide-y divide-white/20 font-mono text-lg">
+						<li class="py-4">Award 1</li>
+						<li class="py-4">Award 2</li>
+						<li class="py-4">Award 3</li>
+					</ul>
+				</div>
+			</section>
+
+			<section id="contact" class="h-screen w-full flex items-center bg-gradient-to-br from-rose-500 to-fuchsia-600 text-white">
+				<div class="container mx-auto px-6">
+					<h2 class="text-center text-5xl md:text-7xl font-extrabold mb-4">Contact</h2>
+					<p class="text-center text-neutral-300 mb-8">Past workplaces</p>
+					<ul class=" divide-y divide-white/20 font-mono text-lg">
+						<li class="py-4"><a href="#">Github</a></li>
+						<li class="py-4"><a href="#">LinkedIn</a></li>
+					</ul>
+				</div>
+			</section>
+
+			<footer class="py-8 text-center border-t border-neutral-200">
+				<p class="text-lg font-medium">Made with ❤️ by Daniela</p>
+				<p class="text-sm text-neutral-600">React + Astro + Spline + TailwindCSS</p>
+			</footer>
+		</main>
+	</body>
+</html>
