@@ -53,16 +53,19 @@ import ProjectView from "../components/ProjectView.jsx";
 				</div>
 			  </section>
 			  
-			<section id="projects" class="relative h-screen w-full overflow-hidden">
-				<ProjectView client:load />
-				<div class="absolute bottom-0 right-0 w-40 h-20 bg-white"></div>
-				<div class="absolute inset-0 overflow-y-auto p-8">
-				  <h2 class="text-4xl md:text-5xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-400 via-pink-500 to-rose-500 text-center">
-					Projects
-				  </h2>
-				  
+			<section id="projects" class="relative min-h-screen">
+				<div class="z-20 sticky md:static top-0 p-6 bg-white">
+					<h2 class="p-1 text-5xl md:text-7xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-400 via-pink-500 to-rose-500 text-center">
+						Projects
+					</h2>
+				</div>
+			    <div class="sticky md:absolute inset-0 top-24 w-full h-screen -z-10">
+					<div class="w-full h-full">
+						<ProjectView client:load />
+					</div>
+				</div>
+    			<div class="relative z-10 p-8 mt-[-20vh] md:-mt-6">
 				  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-
 					  
 					<a href="https://www.behance.net/gallery/234760079/Estonian-Student-Satellite" target="_blank" rel="noopener noreferrer"
 					class="group block bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden">
