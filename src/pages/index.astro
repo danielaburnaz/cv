@@ -59,10 +59,8 @@ import ProjectView from "../components/ProjectView.jsx";
 						Projects
 					</h2>
 				</div>
-			    <div class="sticky md:absolute inset-0 top-24 w-full h-screen -z-10">
-					<div class="w-full h-full">
-						<ProjectView client:load />
-					</div>
+			    <div class="sticky md:absolute inset-0 top-24 w-full -z-10">
+					<ProjectView client:load />
 				</div>
     			<div class="relative z-10 p-8 mt-[-20vh] md:-mt-6">
 				  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
